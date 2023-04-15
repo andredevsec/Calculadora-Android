@@ -1,5 +1,6 @@
 package br.edu.ifsuldeminas.mch.calc;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
@@ -25,10 +26,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private String calculo = "";
     private Double resultado = 0.0;
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.hide();
 
         textViewResultado = findViewById(R.id.textViewResultadoID);
         textViewUltimaExpressao = findViewById(R.id.textViewUltimaExpressaoID);
@@ -53,25 +59,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         buttonDeleteID = findViewById(R.id.buttonDeleteID);
 
         buttonIgual.setOnClickListener(this);
-        buttonZeroID.setOnClickListener(this);
-        buttonUmID.setOnClickListener(this);
-        buttonDoisID.setOnClickListener(this);
-        buttonTresID.setOnClickListener(this);
-        buttonQuatroID.setOnClickListener(this);
-        buttonCincoID.setOnClickListener(this);
-        buttonSeisID.setOnClickListener(this);
-        buttonSeteID.setOnClickListener(this);
-        buttonOitoID.setOnClickListener(this);
-        buttonNoveID.setOnClickListener(this);
-        buttonVirgulaID.setOnClickListener(this);
-        buttonSomaID.setOnClickListener(this);
-        buttonSubtracaoID.setOnClickListener(this);
-        buttonPorcentoID.setOnClickListener(this);
-        buttonMultiplicacaoID.setOnClickListener(this);
+
+
+        String a = textViewUltimaExpressao.getText().toString();
 
         buttonUmID.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                if(!a.equals("")){
+                    textViewUltimaExpressao.append("");
+                }
                 textViewUltimaExpressao.append("1");
             }
         });
@@ -79,6 +76,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         buttonDoisID.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                if(!a.equals("")){
+                    textViewUltimaExpressao.append("");
+                }
                 textViewUltimaExpressao.append("2");
             }
         });
@@ -86,6 +86,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         buttonTresID.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                if(!a.equals("")){
+                    textViewUltimaExpressao.append("");
+                }
                 textViewUltimaExpressao.append("3");
             }
         });
@@ -93,6 +96,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         buttonQuatroID.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                if(!a.equals("")){
+                    textViewUltimaExpressao.append("");
+                }
                 textViewUltimaExpressao.append("4");
             }
         });
@@ -100,6 +106,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         buttonCincoID.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                if(!a.equals("")){
+                    textViewUltimaExpressao.append("");
+                }
                 textViewUltimaExpressao.append("5");
             }
         });
@@ -107,6 +116,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         buttonSeisID.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                if(!a.equals("")){
+                    textViewUltimaExpressao.append("");
+                }
                 textViewUltimaExpressao.append("6");
             }
         });
@@ -114,6 +126,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         buttonSeteID.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                if(!a.equals("")){
+                    textViewUltimaExpressao.append("");
+                }
                 textViewUltimaExpressao.append("7");
             }
         });
@@ -121,56 +136,107 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         buttonOitoID.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                textViewUltimaExpressao.append("8");
+                if(!a.equals("")){
+                    textViewUltimaExpressao.append("");
+                }
+                    textViewUltimaExpressao.append("8");
+
+
             }
         });
 
         buttonNoveID.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                if(!a.equals("")){
+                    textViewUltimaExpressao.append("");
+                }
                 textViewUltimaExpressao.append("9");
             }
         });
 
+
         buttonZeroID.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                if(!a.equals("")){
+                    textViewUltimaExpressao.append("");
+                }
                 textViewUltimaExpressao.append("0");
             }
+
+
         });
 
         buttonVirgulaID.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                textViewUltimaExpressao.append(".");
+                // Obtem a última expressão do textViewUltimaExpressao
+                String ultimaExpressao = textViewUltimaExpressao.getText().toString();
+
+                // Verifica se a última caracter é um "."
+                if (!ultimaExpressao.endsWith(".") ) {
+                    // Se não for um "/", adiciona um novo "." ao final da expressão
+                    textViewUltimaExpressao.append(".");
+                }
             }
         });
+
+
 
         buttonSomaID.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                textViewUltimaExpressao.append("+");
+                // Obtem a última expressão do textViewUltimaExpressao
+                String ultimaExpressao = textViewUltimaExpressao.getText().toString();
+
+                // Verifica se a última caracter é um "+"
+                if (!ultimaExpressao.endsWith("*") || ultimaExpressao.endsWith("+") || ultimaExpressao.endsWith("/") || ultimaExpressao.endsWith("-")) {
+                    // Se não for um "+", adiciona um novo "+" ao final da expressão
+                    textViewUltimaExpressao.append("+");
+                }
             }
         });
 
         buttonSubtracaoID.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                textViewUltimaExpressao.append("-");
+                // Obtem a última expressão do textViewUltimaExpressao
+                String ultimaExpressao = textViewUltimaExpressao.getText().toString();
+
+                // Verifica se a última caracter é um "+"
+                if (!ultimaExpressao.endsWith("*") || ultimaExpressao.endsWith("+") || ultimaExpressao.endsWith("/") || ultimaExpressao.endsWith("-")) {
+                    // Se não for um "+", adiciona um novo "+" ao final da expressão
+                    textViewUltimaExpressao.append("-");
+                }
             }
         });
 
         buttonMultiplicacaoID.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                textViewUltimaExpressao.append("*");
+                // Obtem a última expressão do textViewUltimaExpressao
+                String ultimaExpressao = textViewUltimaExpressao.getText().toString();
+
+                // Verifica se a última caracter é um "+"
+                if (!ultimaExpressao.endsWith("*") || ultimaExpressao.endsWith("+") || ultimaExpressao.endsWith("/") || ultimaExpressao.endsWith("-")) {
+                    // Se não for um "+", adiciona um novo "+" ao final da expressão
+                    textViewUltimaExpressao.append("*");
+                }
             }
         });
 
         buttonDivisaoID.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                textViewUltimaExpressao.append("/");
+                // Obtem a última expressão do textViewUltimaExpressao
+                String ultimaExpressao = textViewUltimaExpressao.getText().toString();
+
+                // Verifica se a última caracter é um "/"
+                if (!ultimaExpressao.endsWith("*") || ultimaExpressao.endsWith("+") || ultimaExpressao.endsWith("/") || ultimaExpressao.endsWith("-")) {
+                    // Se não for um "/", adiciona um novo "/" ao final da expressão
+                    textViewUltimaExpressao.append("/");
+                }
             }
         });
 
@@ -211,10 +277,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 Calculable calc = new ExpressionBuilder(calculo).build();
                 resultado = calc.calculate();
                 textViewResultado.setText(resultado.toString());
+                textViewUltimaExpressao.setText(resultado.toString()
+                );
+
             } catch (Exception e) {
                 Log.e(TAG, "Erro ao avaliar a expressão: " + calculo, e);
                 textViewResultado.setText("Erro");
             }
         }
     }
+}
 }
