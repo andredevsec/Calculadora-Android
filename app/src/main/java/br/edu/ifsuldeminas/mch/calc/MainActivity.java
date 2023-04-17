@@ -67,9 +67,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             @Override
             public void onClick(View view) {
                 if(!a.equals("")){
-                    textViewResultado.setText("");
+                    textViewResultado.append("");
                 }
-                textViewResultado.setText("1");
+                textViewResultado.append("1");
             }
         });
 
@@ -77,9 +77,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             @Override
             public void onClick(View view) {
                 if(!a.equals("")){
-                    textViewResultado.setText("");
+                    textViewResultado.append("");
                 }
-                textViewResultado.setText("2");
+                textViewResultado.append("2");
             }
         });
 
@@ -87,9 +87,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             @Override
             public void onClick(View view) {
                 if(!a.equals("")){
-                    textViewResultado.setText("");
+                    textViewResultado.append("");
                 }
-                textViewResultado.setText("3");
+                textViewResultado.append("3");
             }
         });
 
@@ -97,9 +97,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             @Override
             public void onClick(View view) {
                 if(!a.equals("")){
-                    textViewResultado.setText("");
+                    textViewResultado.append("");
                 }
-                textViewResultado.setText("4");
+                textViewResultado.append("4");
             }
         });
 
@@ -107,9 +107,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             @Override
             public void onClick(View view) {
                 if(!a.equals("")){
-                    textViewResultado.setText("");
+                    textViewResultado.append("");
                 }
-                textViewResultado.setText("5");
+                textViewResultado.append("5");
             }
         });
 
@@ -117,9 +117,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             @Override
             public void onClick(View view) {
                 if(!a.equals("")){
-                    textViewResultado.setText("");
+                    textViewResultado.append("");
                 }
-                textViewResultado.setText("6");
+                textViewResultado.append("6");
             }
         });
 
@@ -127,9 +127,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             @Override
             public void onClick(View view) {
                 if(!a.equals("")){
-                    textViewResultado.setText("");
+                    textViewResultado.append("");
                 }
-                textViewResultado.setText("7");
+                textViewResultado.append("7");
             }
         });
 
@@ -137,9 +137,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             @Override
             public void onClick(View view) {
                 if(!a.equals("")){
+                    textViewUltimaExpressao.setText("");
                     textViewResultado.setText("");
                 }
-                textViewResultado.setText("8");
+                textViewResultado.append("8");
 
 
             }
@@ -149,9 +150,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             @Override
             public void onClick(View view) {
                 if(!a.equals("")){
-                    textViewResultado.setText("");
+                    textViewResultado.append("");
                 }
-                textViewResultado.setText("9");
+                textViewResultado.append("9");
             }
         });
 
@@ -160,9 +161,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             @Override
             public void onClick(View view) {
                 if(!a.equals("")){
-                    textViewResultado.setText("");
+                    textViewResultado.append("");
                 }
-                textViewResultado.setText("0");
+                textViewResultado.append("0");
             }
 
 
@@ -177,7 +178,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 // Verifica se a última caracter é um "."
                 if (!ultimaExpressao.endsWith(".")) {
                     // Se não for um ".", adiciona um novo "." ao final da expressão
-                    textViewResultado.setText(".");
+                    textViewResultado.append(".");
                 }
             }
         });
@@ -193,7 +194,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 // Verifica se a última caracter é um "+"
                 if (!ultimaExpressao.endsWith("/") && !ultimaExpressao.endsWith("+") && !ultimaExpressao.endsWith("*") && !ultimaExpressao.endsWith("-")) {
                     // Se não for um "+", adiciona um novo "+" ao final da expressão
-                    textViewResultado.setText("+");
+                    textViewResultado.append("+");
                 }
             }
         });
@@ -205,9 +206,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 String ultimaExpressao = textViewResultado.getText().toString();
 
                 // Verifica se a última caracter é um "-"
-                if (!ultimaExpressao.endsWith("/") && !ultimaExpressao.endsWith("+") && !ultimaExpressao.endsWith("/") && !ultimaExpressao.endsWith("-")) {
+                if (!ultimaExpressao.endsWith("/") && !ultimaExpressao.endsWith("+") && !ultimaExpressao.endsWith("*") && !ultimaExpressao.endsWith("-")) {
                     // Se não for um "+", adiciona um novo "-" ao final da expressão
-                    textViewResultado.setText("-");
+                    textViewResultado.append("-");
                 }
             }
         });
@@ -221,7 +222,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 // Verifica se a última caracter é um "+"
                 if (!ultimaExpressao.endsWith("/") && !ultimaExpressao.endsWith("+") && !ultimaExpressao.endsWith("*") && !ultimaExpressao.endsWith("-")) {
                     // Se não for um "+", adiciona um novo "+" ao final da expressão
-                    textViewResultado.setText("*");
+                    textViewResultado.append("*");
                 }
             }
         });
@@ -235,7 +236,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 // Verifica se a última caracter é um "/"
                 if (!ultimaExpressao.endsWith("/") && !ultimaExpressao.endsWith("+") && !ultimaExpressao.endsWith("*") && !ultimaExpressao.endsWith("-")) {
                     // Se não for um "/", adiciona um novo "/" ao final da expressão
-                    textViewResultado.setText("/");
+                    textViewResultado.append("/");
                 }
             }
         });
@@ -243,7 +244,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         buttonPorcentoID.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                textViewResultado.setText("%");
+                textViewResultado.append("%");
             }
         });
 
