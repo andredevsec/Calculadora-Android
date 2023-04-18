@@ -25,9 +25,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private String calculo = "";
     private Double resultado;
-
-
-
+    private boolean operacaoComposta = false;
+    
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -57,122 +56,156 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         buttonDivisaoID = findViewById(R.id.buttonDivisaoID);
         buttonResetID = findViewById(R.id.buttonResetID);
         buttonDeleteID = findViewById(R.id.buttonDeleteID);
-
+        
         buttonIgual.setOnClickListener(this);
-
-
-         String a = textViewResultado.getText().toString();
-
+        
         buttonUmID.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(!a.equals("")){
-                    textViewResultado.append("");
+                if (operacaoComposta==false){
+                    textViewResultado.append("1");
                 }
-                textViewResultado.append("1");
+
+                if (operacaoComposta == true) {
+                    operacaoComposta = false;
+                    textViewResultado.setText("");
+                    textViewResultado.append("1");
+                }
             }
         });
 
         buttonDoisID.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(!a.equals("")){
-                    textViewResultado.append("");
+                if (operacaoComposta==false){
+                    textViewResultado.append("2");
                 }
-                textViewResultado.append("2");
+                
+                if (operacaoComposta == true) {
+                    operacaoComposta = false;
+                    textViewResultado.setText("");
+                    textViewResultado.append("2");
+                }
             }
         });
 
         buttonTresID.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(!a.equals("")){
-                    textViewResultado.append("");
+                if (operacaoComposta==false){
+                    textViewResultado.append("3");
                 }
-                textViewResultado.append("3");
+
+                if (operacaoComposta == true) {
+                    operacaoComposta = false;
+                    textViewResultado.setText("");
+                    textViewResultado.append("3");
+                }
             }
         });
 
         buttonQuatroID.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(!a.equals("")){
-                    textViewResultado.append("");
+                if (operacaoComposta==false){
+                    textViewResultado.append("4");
                 }
-                textViewResultado.append("4");
+
+                if (operacaoComposta == true) {
+                    operacaoComposta = false;
+                    textViewResultado.setText("");
+                    textViewResultado.append("4");
+                }
             }
         });
 
         buttonCincoID.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(!a.equals("")){
-                    textViewResultado.append("");
+                if (operacaoComposta==false){
+                    textViewResultado.append("5");
                 }
-                textViewResultado.append("5");
+
+                if (operacaoComposta == true) {
+                    operacaoComposta = false;
+                    textViewResultado.setText("");
+                    textViewResultado.append("5");
+                }
             }
         });
 
         buttonSeisID.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(!a.equals("")){
-                    textViewResultado.append("");
+                if (operacaoComposta==false){
+                    textViewResultado.append("6");
                 }
-                textViewResultado.append("6");
+
+                if (operacaoComposta == true) {
+                    operacaoComposta = false;
+                    textViewResultado.setText("");
+                    textViewResultado.append("6");
+                }
             }
         });
 
         buttonSeteID.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(!a.equals("")){
-                    textViewResultado.append("");
+                if (operacaoComposta==false){
+                    textViewResultado.append("7");
                 }
-                textViewResultado.append("7");
+
+                if (operacaoComposta == true) {
+                    operacaoComposta = false;
+                    textViewResultado.setText("");
+                    textViewResultado.append("7");
+                }
             }
         });
-
+        
         buttonOitoID.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String a = textViewResultado.getText().toString();
-
-                if ((a.equals("")) || (a.equals("8")) || (a.equals("+"))  || (a.equals("-"))|| (a.equals("/")) || (a.equals("/")) ) {
-                     textViewResultado.append("8");
+                if (operacaoComposta==false){
+                    textViewResultado.append("8");
                  }
 
-                else if ((!a.equals("")) || (a.equals("8")) || (a.equals("+"))  || (a.equals("-"))|| (a.equals("/")) || (a.equals("/"))) {
+                if (operacaoComposta == true) {
+                    operacaoComposta = false;
                     textViewResultado.setText("");
+                    textViewResultado.append("8");
                 }
-
-
-
-
-
-
-
             }
         });
 
         buttonNoveID.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(!a.equals("")){
-                    textViewResultado.append("");
+                if (operacaoComposta==false){
+                    textViewResultado.append("9");
                 }
-                textViewResultado.append("9");
+
+                if (operacaoComposta == true) {
+                    operacaoComposta = false;
+                    textViewResultado.setText("");
+                    textViewResultado.append("9");
+                }
             }
         });
-
-
+        
         buttonZeroID.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(!a.equals("")){
-                    textViewResultado.append("");
+                if (operacaoComposta==false){
+                    textViewResultado.append("0");
                 }
-                textViewResultado.append("0");
+
+                if (operacaoComposta == true) {
+                    operacaoComposta = false;
+                    textViewResultado.setText("");
+                    textViewResultado.append("0");
+                }
             }
 
 
@@ -191,9 +224,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 }
             }
         });
-
-
-
+        
         buttonSomaID.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -287,6 +318,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 Calculable calc = new ExpressionBuilder(calculo).build();
                 resultado = calc.calculate();
                 textViewResultado.setText(resultado.toString());
+                operacaoComposta = true;
                 textViewUltimaExpressao.setText(resultado.toString()
                 );
 
@@ -297,4 +329,3 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
     }
 }
-
