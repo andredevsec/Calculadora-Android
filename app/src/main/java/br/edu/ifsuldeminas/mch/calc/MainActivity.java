@@ -61,7 +61,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         buttonIgual.setOnClickListener(this);
 
 
-        String a = textViewResultado.getText().toString();
+         String a = textViewResultado.getText().toString();
 
         buttonUmID.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -136,7 +136,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         buttonOitoID.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(!a.equals("")){
+                String a = textViewResultado.getText().toString();
+                if (a.equals("*")) {
+                    textViewResultado.append("8");
+                }
+
+                else if(!a.equals("") || a.equals("")) {
                     textViewUltimaExpressao.setText("");
                     textViewResultado.setText("");
                 }
