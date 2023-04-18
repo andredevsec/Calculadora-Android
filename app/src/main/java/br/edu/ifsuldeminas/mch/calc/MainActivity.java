@@ -137,15 +137,19 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             @Override
             public void onClick(View view) {
                 String a = textViewResultado.getText().toString();
-                if (a.equals("*")) {
-                    textViewResultado.append("8");
-                }
 
-                else if(!a.equals("") || a.equals("")) {
-                    textViewUltimaExpressao.setText("");
+                if ((a.equals("")) || (a.equals("8")) || (a.equals("+"))  || (a.equals("-"))|| (a.equals("/")) || (a.equals("/")) ) {
+                     textViewResultado.append("8");
+                 }
+
+                else if ((!a.equals("")) || (a.equals("8")) || (a.equals("+"))  || (a.equals("-"))|| (a.equals("/")) || (a.equals("/"))) {
                     textViewResultado.setText("");
                 }
-                textViewResultado.append("8");
+
+
+
+
+
 
 
             }
@@ -293,3 +297,4 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
     }
 }
+
