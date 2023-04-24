@@ -26,7 +26,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private String calculo = "";
     private Double resultado;
     private boolean operacaoComposta = false;
-    
+    private boolean operacaoSimples = false;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -56,14 +57,20 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         buttonDivisaoID = findViewById(R.id.buttonDivisaoID);
         buttonResetID = findViewById(R.id.buttonResetID);
         buttonDeleteID = findViewById(R.id.buttonDeleteID);
-        
+
         buttonIgual.setOnClickListener(this);
-        
+
         buttonUmID.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                String ultimaExpressao = textViewResultado.getText().toString();
+                
                 if (operacaoComposta==false){
                     textViewResultado.append("1");
+                }
+
+                if (ultimaExpressao.endsWith("/") || ultimaExpressao.endsWith("+") || ultimaExpressao.endsWith("*") || ultimaExpressao.endsWith("-")) {
+                    operacaoComposta = false;
                 }
 
                 if (operacaoComposta == true) {
@@ -77,10 +84,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         buttonDoisID.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                String ultimaExpressao = textViewResultado.getText().toString();
+                
                 if (operacaoComposta==false){
                     textViewResultado.append("2");
                 }
-                
+
+                if (ultimaExpressao.endsWith("/") || ultimaExpressao.endsWith("+") || ultimaExpressao.endsWith("*") || ultimaExpressao.endsWith("-")) {
+                    operacaoComposta = false;
+                }
+
                 if (operacaoComposta == true) {
                     operacaoComposta = false;
                     textViewResultado.setText("");
@@ -92,8 +105,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         buttonTresID.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                String ultimaExpressao = textViewResultado.getText().toString();
+                
                 if (operacaoComposta==false){
                     textViewResultado.append("3");
+                }
+
+                if (ultimaExpressao.endsWith("/") || ultimaExpressao.endsWith("+") || ultimaExpressao.endsWith("*") || ultimaExpressao.endsWith("-")) {
+                    operacaoComposta = false;
                 }
 
                 if (operacaoComposta == true) {
@@ -107,8 +126,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         buttonQuatroID.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                String ultimaExpressao = textViewResultado.getText().toString();
+                
                 if (operacaoComposta==false){
                     textViewResultado.append("4");
+                }
+
+                if (ultimaExpressao.endsWith("/") || ultimaExpressao.endsWith("+") || ultimaExpressao.endsWith("*") || ultimaExpressao.endsWith("-")) {
+                    operacaoComposta = false;
                 }
 
                 if (operacaoComposta == true) {
@@ -122,8 +147,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         buttonCincoID.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                String ultimaExpressao = textViewResultado.getText().toString();
+                
                 if (operacaoComposta==false){
                     textViewResultado.append("5");
+                }
+
+                if (ultimaExpressao.endsWith("/") || ultimaExpressao.endsWith("+") || ultimaExpressao.endsWith("*") || ultimaExpressao.endsWith("-")) {
+                    operacaoComposta = false;
                 }
 
                 if (operacaoComposta == true) {
@@ -137,8 +168,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         buttonSeisID.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                String ultimaExpressao = textViewResultado.getText().toString();
+                
                 if (operacaoComposta==false){
                     textViewResultado.append("6");
+                }
+
+                if (ultimaExpressao.endsWith("/") || ultimaExpressao.endsWith("+") || ultimaExpressao.endsWith("*") || ultimaExpressao.endsWith("-")) {
+                    operacaoComposta = false;
                 }
 
                 if (operacaoComposta == true) {
@@ -152,8 +189,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         buttonSeteID.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                String ultimaExpressao = textViewResultado.getText().toString();
+                
                 if (operacaoComposta==false){
                     textViewResultado.append("7");
+                }
+
+                if (ultimaExpressao.endsWith("/") || ultimaExpressao.endsWith("+") || ultimaExpressao.endsWith("*") || ultimaExpressao.endsWith("-")) {
+                    operacaoComposta = false;
                 }
 
                 if (operacaoComposta == true) {
@@ -163,13 +206,19 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 }
             }
         });
-        
+
         buttonOitoID.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                String ultimaExpressao = textViewResultado.getText().toString();
+
                 if (operacaoComposta==false){
                     textViewResultado.append("8");
                  }
+
+                if (ultimaExpressao.endsWith("/") || ultimaExpressao.endsWith("+") || ultimaExpressao.endsWith("*") || ultimaExpressao.endsWith("-")) {
+                    operacaoComposta = false;
+                }
 
                 if (operacaoComposta == true) {
                     operacaoComposta = false;
@@ -182,26 +231,32 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         buttonNoveID.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                String ultimaExpressao = textViewResultado.getText().toString();
+
                 if (operacaoComposta==false){
                     textViewResultado.append("9");
                 }
 
-                if (operacaoComposta == true) {
+                if (ultimaExpressao.endsWith("/") || ultimaExpressao.endsWith("+") || ultimaExpressao.endsWith("*") || ultimaExpressao.endsWith("-")) {
+                    operacaoComposta = false;
+                }
+
+                if(operacaoComposta == true) {
                     operacaoComposta = false;
                     textViewResultado.setText("");
                     textViewResultado.append("9");
                 }
             }
         });
-        
+
         buttonZeroID.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (operacaoComposta==false){
+                if  (operacaoComposta==false){
                     textViewResultado.append("0");
                 }
 
-                if (operacaoComposta == true) {
+                if(operacaoComposta == true) {
                     operacaoComposta = false;
                     textViewResultado.setText("");
                     textViewResultado.append("0");
@@ -218,13 +273,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 String ultimaExpressao = textViewResultado.getText().toString();
 
                 // Verifica se a última caracter é um "."
-                if (!ultimaExpressao.endsWith(".")) {
+                if (!ultimaExpressao.endsWith(",")) {
                     // Se não for um ".", adiciona um novo "." ao final da expressão
-                    textViewResultado.append(".");
+                    textViewResultado.append(",");
                 }
             }
         });
-        
+
         buttonSomaID.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
