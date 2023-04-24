@@ -64,13 +64,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             @Override
             public void onClick(View view) {
                 String ultimaExpressao = textViewResultado.getText().toString();
-                
-                if (operacaoComposta==false){
-                    textViewResultado.append("1");
-                }
 
                 if (ultimaExpressao.endsWith("/") || ultimaExpressao.endsWith("+") || ultimaExpressao.endsWith("*") || ultimaExpressao.endsWith("-")) {
                     operacaoComposta = false;
+                }
+
+                if (operacaoComposta==false){
+                    textViewResultado.append("1");
                 }
 
                 if (operacaoComposta == true) {
@@ -85,13 +85,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             @Override
             public void onClick(View view) {
                 String ultimaExpressao = textViewResultado.getText().toString();
-                
-                if (operacaoComposta==false){
-                    textViewResultado.append("2");
-                }
 
                 if (ultimaExpressao.endsWith("/") || ultimaExpressao.endsWith("+") || ultimaExpressao.endsWith("*") || ultimaExpressao.endsWith("-")) {
                     operacaoComposta = false;
+                }
+
+                if (operacaoComposta==false){
+                    textViewResultado.append("2");
                 }
 
                 if (operacaoComposta == true) {
@@ -106,13 +106,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             @Override
             public void onClick(View view) {
                 String ultimaExpressao = textViewResultado.getText().toString();
-                
-                if (operacaoComposta==false){
-                    textViewResultado.append("3");
-                }
 
                 if (ultimaExpressao.endsWith("/") || ultimaExpressao.endsWith("+") || ultimaExpressao.endsWith("*") || ultimaExpressao.endsWith("-")) {
                     operacaoComposta = false;
+                }
+
+                if (operacaoComposta==false){
+                    textViewResultado.append("3");
                 }
 
                 if (operacaoComposta == true) {
@@ -127,13 +127,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             @Override
             public void onClick(View view) {
                 String ultimaExpressao = textViewResultado.getText().toString();
-                
-                if (operacaoComposta==false){
-                    textViewResultado.append("4");
-                }
 
                 if (ultimaExpressao.endsWith("/") || ultimaExpressao.endsWith("+") || ultimaExpressao.endsWith("*") || ultimaExpressao.endsWith("-")) {
                     operacaoComposta = false;
+                }
+
+                if (operacaoComposta==false){
+                    textViewResultado.append("4");
                 }
 
                 if (operacaoComposta == true) {
@@ -148,13 +148,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             @Override
             public void onClick(View view) {
                 String ultimaExpressao = textViewResultado.getText().toString();
-                
-                if (operacaoComposta==false){
-                    textViewResultado.append("5");
-                }
 
                 if (ultimaExpressao.endsWith("/") || ultimaExpressao.endsWith("+") || ultimaExpressao.endsWith("*") || ultimaExpressao.endsWith("-")) {
                     operacaoComposta = false;
+                }
+
+                if (operacaoComposta==false){
+                    textViewResultado.append("5");
                 }
 
                 if (operacaoComposta == true) {
@@ -169,13 +169,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             @Override
             public void onClick(View view) {
                 String ultimaExpressao = textViewResultado.getText().toString();
-                
-                if (operacaoComposta==false){
-                    textViewResultado.append("6");
-                }
 
                 if (ultimaExpressao.endsWith("/") || ultimaExpressao.endsWith("+") || ultimaExpressao.endsWith("*") || ultimaExpressao.endsWith("-")) {
                     operacaoComposta = false;
+                }
+
+                if (operacaoComposta==false){
+                    textViewResultado.append("6");
                 }
 
                 if (operacaoComposta == true) {
@@ -190,13 +190,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             @Override
             public void onClick(View view) {
                 String ultimaExpressao = textViewResultado.getText().toString();
-                
-                if (operacaoComposta==false){
-                    textViewResultado.append("7");
-                }
 
                 if (ultimaExpressao.endsWith("/") || ultimaExpressao.endsWith("+") || ultimaExpressao.endsWith("*") || ultimaExpressao.endsWith("-")) {
                     operacaoComposta = false;
+                }
+
+                if (operacaoComposta==false){
+                    textViewResultado.append("7");
                 }
 
                 if (operacaoComposta == true) {
@@ -212,13 +212,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             public void onClick(View view) {
                 String ultimaExpressao = textViewResultado.getText().toString();
 
-                if (operacaoComposta==false){
-                    textViewResultado.append("8");
-                 }
-
                 if (ultimaExpressao.endsWith("/") || ultimaExpressao.endsWith("+") || ultimaExpressao.endsWith("*") || ultimaExpressao.endsWith("-")) {
                     operacaoComposta = false;
                 }
+
+                if (operacaoComposta==false){
+                    textViewResultado.append("8");
+                 }
 
                 if (operacaoComposta == true) {
                     operacaoComposta = false;
@@ -233,12 +233,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             public void onClick(View view) {
                 String ultimaExpressao = textViewResultado.getText().toString();
 
-                if (operacaoComposta==false){
-                    textViewResultado.append("9");
-                }
-
                 if (ultimaExpressao.endsWith("/") || ultimaExpressao.endsWith("+") || ultimaExpressao.endsWith("*") || ultimaExpressao.endsWith("-")) {
                     operacaoComposta = false;
+                }
+
+                if (operacaoComposta==false){
+                    textViewResultado.append("9");
                 }
 
                 if(operacaoComposta == true) {
@@ -262,8 +262,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     textViewResultado.append("0");
                 }
             }
-
-
         });
 
         buttonVirgulaID.setOnClickListener(new View.OnClickListener() {
