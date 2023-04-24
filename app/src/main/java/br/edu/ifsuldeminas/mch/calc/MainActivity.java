@@ -26,7 +26,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private String calculo = "";
     private Double resultado;
     private boolean operacaoComposta = false;
-    private boolean operacaoSimples = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
